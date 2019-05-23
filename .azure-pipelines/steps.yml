@@ -1,0 +1,11 @@
+steps:
+
+- task: UseRubyVersion@0
+  inputs:
+    versionSpec: '= 2.5'
+
+- script: |
+    ruby -v
+    ridk version
+    ruby -e 'puts Pathname.new("C:/foo").absolute?'
+  displayName: 'Test'
