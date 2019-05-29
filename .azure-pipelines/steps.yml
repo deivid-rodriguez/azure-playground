@@ -4,5 +4,7 @@ steps:
   inputs:
     versionSpec: '= 2.5'
 
-- script: ruby -rpathname -e 'puts Pathname.new("C:/foo").absolute?'
+- script: |
+    result=$(ruby -rpathname -e 'puts Pathname.new("C:/foo").absolute?')
+    echo $result
   displayName: 'Test'
